@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mi</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <h1>Hola yo soy <%= persona.nombre + ' ' +persona.apellido %></h1>
+
+    <h2>Un poco sobre mi:</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia alias reiciendis quisquam voluptatem nam asperiores sapiente perferendis numquam ipsum tenetur officia nisi accusamus, repudiandae libero voluptatibus consectetur adipisci tempore obcaecati quo. Sunt inventore quasi ratione quod autem natus sequi, sed officia excepturi vitae quis? Tempore minus reprehenderit esse nostrum quas!</p>
+
+    <% if( persona.edad > 18){ %> 
+    <p>Me encanta tomar Cerveza</p>
+    <%} else  {%>
+    <p>Me encanta tomar Coca Cola</p>
+    <%}%>
+
+
+    <% if( persona.tareas.length > 1){ %> 
+        <h2>Tareas pendientes:</h2>
+        <ul>
+            <% persona.tareas.forEach(function(element) { %> 
+                <li><%= element %></li> 
+            <% }); %> 
+            
+        </ul>
+    <%}%>
+
+
+    <%- include('../partials/footer.ejs') %> 
+</body>
+</html>
