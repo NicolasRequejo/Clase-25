@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <h1 style="text-align: center;">Datos Usuario</h1>
+
+    <h2 style="text-align: center;">Hola, soy <%= data.userName %> y mi apellido es <%= data.userLastname %></h2>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

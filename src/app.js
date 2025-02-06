@@ -1,37 +1,22 @@
+const express = require('express');// Importación del modulo de express
+const app = express();// Instanciamos o "ejecutamos" express
+const path = require('path')//Importamos el modulo "path"
+const bodyParser = require('body-parser')//importamos body-parser
+const userRouter = require('../routes/userRoutes');// importar rutas de User
 
-// Importación del modulo de express
-const express = require('express');
-
-// Instanciamos o "ejecutamos" express
-const app = express();
-
-//Importamos el modulo "path"
-const path = require('path')
-
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.set('view engine', 'ejs')
 
-
-//definimos un objeto usuario
-const user = {
-    nombre: 'Facundo',
-    apellido:'Arias',
-    edad: '22',
-    tareas: ['Lavar Platos','Pasear perro','Cocinar','Entrenar Voleyball']
-}
-
-app.get('/', (req,res)=>{
-    res.render('vistas/bienvenido',{
-        persona:user
-    })
-})
-
+app.use('/',userRouter)
 
 app.get('/about-me', (req,res)=>{
     res.render('vistas/about-me',{
         persona:user
     })
 })
+
+
 
 //Aca hacemos uso del metodo static
 app.use(express.static(path.join(__dirname, 'public')));

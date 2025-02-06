@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Usuario</title>
+</head>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+
+
+        <h1>Información de Usuario <%= usuario.nombre %></h1>
+
+        <ul>
+            <li>Nombre: <%= usuario.nombre %></li>
+            <li>Apellido: <%= usuario.apellido %></li>
+            <li>Promedio: <%= usuario.promedio %></li>
+            <li>Curso: <%= usuario.curso %></li>
+        </ul>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis libero inventore reprehenderit id fugiat
+            voluptatum delectus quisquam velit reiciendis! Earum illum, vel commodi voluptates distinctio veniam,
+            laudantium consectetur officia voluptatibus autem eligendi dolor ex soluta reiciendis mollitia? Quo, modi
+            quibusdam laborum qui cupiditate illum aspernatur dignissimos magnam ratione! Cupiditate, provident?</p>
+
+
+            <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
