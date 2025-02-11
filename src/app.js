@@ -10,11 +10,23 @@ app.set('view engine', 'ejs')
 
 app.use('/',userRouter)
 
-app.get('/about-me', (req,res)=>{
-    res.render('vistas/about-me',{
-        persona:user
-    })
-})
+
+
+
+// ASI SE VERIA LA RUTA CON LA VALIDACION DEL LENGTH SI NO TUVIERAMOS EL CODIGO MODULARIZ
+
+// app.post('/usuarios', body('userName').isLength({min:5}), (req,res)=>{
+//     const error = validationResult(req)
+
+//     if(error.errors.length > 0){
+//         res.render('vistas/user-invalid.ejs')
+//     }else{
+
+//         res.render('vistas/datoUsuario.ejs',{
+//             data: req.body
+//         });
+//     }
+// })
 
 
 

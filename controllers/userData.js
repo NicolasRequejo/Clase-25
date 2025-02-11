@@ -1,3 +1,7 @@
+
+const {validationResult} = require("express-validator")
+
+
 const users = [
     {nombre: 'Luciano', apellido: 'Pizarro', promedio: '9',curso:'Diplo Fullstack', id: 1},
     {nombre: 'Valentina', apellido: 'Gagliano', promedio: '9',curso:'Diplo Fullstack', id: 2},
@@ -11,9 +15,16 @@ const obtenerVistaPrincipal = (req,res)=>{
 }
 
 const procesarFormulario = (req,res)=>{
-    res.render('vistas/datoUsuario.ejs',{
-        data: req.body
-    });
+    const error = validationResult(req)
+
+    if(error.errors.length > 0){
+        res.render('vistas/user-invalid.ejs')
+    }else{
+
+        res.render('vistas/datoUsuario.ejs',{
+            data: req.body
+        });
+    }
 }
 
 const viewData =  (req,res)=>{
