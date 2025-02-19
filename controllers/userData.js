@@ -18,7 +18,7 @@ const procesarFormulario = (req,res)=>{
     const error = validationResult(req)
 
     if(error.errors.length > 0){
-        res.render('vistas/user-invalid.ejs')
+        res.status(400).render('vistas/user-invalid.ejs')
     }else{
 
         res.render('vistas/datoUsuario.ejs',{
